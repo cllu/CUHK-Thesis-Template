@@ -1,0 +1,51 @@
+\documentclass[12pt,a4paper,notitlepage,oneside]{report}
+
+% packages and custom commands
+\input{preamble}
+
+\usepackage{geometry}
+\geometry{a4paper,left=30mm,right=30mm}
+
+% clash with beamer
+\usepackage[hidelinks,pdfusetitle]{hyperref}
+
+\usepackage[backend=biber, style=numeric, maxbibnames=99, mcite=true]{biblatex}
+\addbibresource{thesis.bib}
+
+\begin{document}
+
+\title{CUHK Thesis Template}
+\author{John Doe}
+\date{March 2016}
+\committee{
+  Professor Leonard Leakey Hofstadter (Chair)\\
+  Professor Sheldon Lee Cooper (Thesis Supervisor)\\
+  Professor Howard Joel Wolowitz (Committee Member)\\
+  Professor Rajesh Ramayan Koothrappali (External Examiner)
+}
+\maketitle
+\thispagestyle{empty}
+
+% Small Roman numerals (i, ii, iii, ...) are used for the preliminaries (e.g., abstract, acknowledgement, table of contents).
+\cleardoublepage \pagenumbering{roman} \setcounter{page}{1}
+
+\include{sections/abstract}
+\cleardoublepage
+\include{sections/abstract-chinese}
+
+\cleardoublepage \pagenumbering{roman} \setcounter{page}{1}
+                 \tableofcontents
+\cleardoublepage \listoffigures
+\cleardoublepage \listoftables
+
+% Arabic numbers (1,2,3, ...) are used for the text, appendices and bibliography
+\cleardoublepage \pagenumbering{arabic} \setcounter{page}{1}
+
+                 \include{sections/introduction}
+\cleardoublepage \include{sections/related-work}
+\cleardoublepage \include{sections/content}
+\cleardoublepage \include{sections/conclusion}
+
+\cleardoublepage \printbibliography[heading=bibintoc]
+
+\end{document}

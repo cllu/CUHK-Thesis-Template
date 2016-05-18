@@ -1,0 +1,115 @@
+% provide the 1 binary function symbol
+\usepackage{dsfont}
+
+% table
+\usepackage{booktabs}
+\usepackage{multirow}
+% enable line break in table cell
+\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}r@{}}#2\end{tabular}}
+
+% math
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+% double brackets like \llbracket
+\usepackage{stmaryrd}
+
+% images
+\usepackage{graphicx}
+\graphicspath{{images/}{../images/}}
+
+\usepackage{times}
+\usepackage{url}
+\usepackage{latexsym}
+
+% tikz
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{trees}
+
+\usepackage[normalem]{ulem}
+\newcommand{\rdftext}[1]{{\small{\sffamily #1}}}
+\newcommand{\rdf}[1]{{\scriptsize{\sffamily #1}}}
+\newcommand{\tf}[1]{\ensuremath{_{: {#1}}}}
+
+\usepackage[algoruled]{algorithm2e}
+\usepackage[subrefformat=parens,labelformat=parens]{subfig}
+
+\usepackage{standalone}
+
+% larger line height
+\usepackage{setspace}
+\setstretch{1.2}
+
+\usepackage{rotating}
+
+% use LuaTex
+\usepackage{luatexja-fontspec}
+\setmainfont{Times}
+\setmainjfont{STFangsong}
+
+
+% used in the ACL paper
+\newcommand{\sigfirst}[1]{\uline{#1}}
+\newcommand{\sigsecond}[1]{\uwave{#1}}
+\newcommand{\sigboth}[1]{\uline{\uwave{#1}}}
+
+\newcommand{\committee}[1]{\def\@committee{#1}}
+\newcommand{\thecommittee}{\@committee}
+
+\makeatletter
+\def\@maketitle{%
+  \newpage\thispagestyle{empty}
+  \null
+  \vskip 3em%
+  \begin{center}%
+  \let \footnote \thanks
+    {\huge \bf \@title \par}%
+    %\vskip 1.5em%
+    \vspace{3cm}
+    {\large
+      \lineskip .5em%
+      \begin{tabular}[t]{c}%
+        \@author
+      \end{tabular}\par}%
+    %\vskip 1em%
+    \vspace{4cm}%
+    {
+    \centering
+    \large
+        A Thesis Submitted in Partial Fulfilment \\
+          of the Requirements for the Degree of \\
+               Doctor of Philosophy \\
+                         in\\
+     Systems Engineering and Engineering Management\\
+     \vspace{4cm}
+          The Chinese University of Hong Kong\\
+                       \@date\\
+    }
+    %{\large \@date}%
+  \end{center}%
+
+  \cleardoublepage
+  \vspace*{10mm}
+  \begin{center}
+  \vfill
+  %\Large
+  \underline{\bf Thesis Assessment Committee}
+  \vskip 1.5cm
+  {
+   \thecommittee
+  }
+  \vfill
+  \end{center}
+  \par
+  \vskip 1.5em
+  }
+\makeatother
+
+% http://tex.stackexchange.com/a/16584/22913
+%\usepackage[export]{adjustbox}%[2011/08/13]
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
